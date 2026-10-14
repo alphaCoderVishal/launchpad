@@ -1,0 +1,8 @@
+target/*
+!target/launchpad-1.0.0.jar
+data
+.git
+.tools
+evidence
+*.log
+.env

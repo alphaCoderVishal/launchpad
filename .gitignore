@@ -1,0 +1,13 @@
+target/
+data/
+*.log
+.env
+.terraform/
+*.tfstate*
+*.tfvars
+!*.tfvars.example
+evidence/runtime-*.json
+.tools/
+*.tfplan
+.nio-tcp-fallback/
+__pycache__/

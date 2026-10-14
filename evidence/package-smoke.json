@@ -1,0 +1,12 @@
+{
+  "scope": "Packaging smoke only; worker disabled",
+  "health": {
+    "status": "UP"
+  },
+  "container_user": "10001:10001",
+  "contract_status": 200,
+  "identity": {
+    "name": "vishal",
+    "operator": false
+  }
+}

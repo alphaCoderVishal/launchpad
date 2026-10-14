@@ -1,0 +1,42 @@
+name: verified-local-platform
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Integration tests and packaging
+        run: mvn -B verify
+      - name: Build real workload
+        run: docker build -t launchpad-workload:local workload
+      - name: Package verified control plane
+        run: docker build -t launchpad-control-plane:local .
+      - name: Live Docker acceptance
+        shell: bash
+        run: |
+          java -jar target/launchpad-1.0.0.jar > server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" || true; docker ps -aq --filter label=dev.launchpad.namespace=launchpad | xargs -r docker rm -f' EXIT
+          for i in {1..60}; do
+            if curl -fsS http://127.0.0.1:8088/actuator/health; then break; fi
+            sleep 1
+          done
+          python scripts/demo.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-evidence
+          path: |
+            target/surefire-reports/
+            evidence/runtime-demo.json
+            server.log

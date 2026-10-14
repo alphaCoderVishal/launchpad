@@ -1,0 +1,33 @@
+server:
+  address: ${BIND_ADDRESS:127.0.0.1}
+  port: ${PORT:8088}
+spring:
+  datasource:
+    url: ${DATABASE_URL:jdbc:h2:file:./data/launchpad;DB_CLOSE_ON_EXIT=FALSE}
+    username: sa
+    password: ${DATABASE_PASSWORD:}
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+  mvc:
+    problemdetails:
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      show-details: never
+launchpad:
+  developer-token: ${DEVELOPER_TOKEN:local-developer-token-change-me}
+  other-token: ${OTHER_TOKEN:local-other-token-change-me}
+  operator-token: ${OPERATOR_TOKEN:local-operator-token-change-me}
+  docker-image: ${WORKLOAD_IMAGE:launchpad-workload:local}
+  namespace: ${LAUNCHPAD_NAMESPACE:launchpad}
+  worker-enabled: ${WORKER_ENABLED:true}
+  health-attempts: 60
+  health-delay-ms: 500
+  health-deadline-ms: 30000
+  docker-timeout-seconds: 60

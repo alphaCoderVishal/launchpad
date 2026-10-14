@@ -1,0 +1,56 @@
+{
+  "verified_date_ist": "2026-10-14",
+  "integration_tests": {
+    "tests": 17,
+    "failures": 0,
+    "errors": 0
+  },
+  "live_acceptance": {
+    "checks": 9,
+    "all_passed": true,
+    "scenario_names": [
+      "readiness and unauthenticated rejection",
+      "service ownership isolation",
+      "image/release policy rejection",
+      "idempotent replay and conflicting payload",
+      "real container startup and healthy baseline",
+      "failed candidate preserves healthy route",
+      "operator approval and healthy upgrade",
+      "first release failure has no fabricated active workload",
+      "authenticated observability"
+    ],
+    "completed_utc": "2026-10-14T14:33:01Z",
+    "runner_exit": 0
+  },
+  "restart_recovery": {
+    "passed": true,
+    "killed_state": "DEPLOYING",
+    "same_container_reused": true,
+    "final_status": "SUCCEEDED"
+  },
+  "container_package": {
+    "scope": "Packaging smoke only; worker disabled",
+    "health": {
+      "status": "UP"
+    },
+    "container_user": "10001:10001",
+    "contract_status": 200,
+    "identity": {
+      "name": "vishal",
+      "operator": false
+    }
+  },
+  "terraform_local": {
+    "validate": true,
+    "resources_created": 1,
+    "http_health": 200,
+    "no_drift_plan_exit": 0,
+    "resources_destroyed": 1
+  },
+  "azure_reference": {
+    "provider_validate": true,
+    "cloud_plan": false,
+    "cloud_apply": false
+  },
+  "jar_sha256": "fbf3f3761fcaae3b09aad44bd959ec59c0b6f8711ca9e69bf115c48ba77708a9"
+}
