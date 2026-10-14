@@ -1,5 +1,7 @@
 # Launchpad
 
+[![Verified local platform CI](https://github.com/alphaCoderVishal/launchpad/actions/workflows/ci.yml/badge.svg)](https://github.com/alphaCoderVishal/launchpad/actions/workflows/ci.yml)
+
 **A developer self-service deployment control plane with a health gate, durable intent, owner isolation and an attributable recovery timeline.**
 
 Java 21 / Spring Boot 3.5 / Spring Security / JDBC / Flyway / H2 / Docker / Prometheus / Terraform
@@ -60,7 +62,7 @@ The recovery script owns an isolated child server on port 8090 and its own datab
 
 `acceptance.py` runs the entire black-box suite against an isolated child server on port 8091 and cleans up that run's containers. It is the easiest repeatable acceptance command when your dashboard database already has demo history. Run acceptance and recovery sequentially on a quiet Docker Desktop engine; cold-start resource contention can make health gates fail legitimately.
 
-Results and boundaries are recorded in [verification.md](docs/verification.md). Raw live evidence is generated into `evidence/runtime-*.json` (ignored so local identities/history do not accidentally publish); representative sanitized evidence can be included when publishing. CI performs Maven verification plus the live Docker acceptance script on an Ubuntu runner. The workflow has been authored; remote GitHub execution is not claimed.
+Results and boundaries are recorded in [verification.md](docs/verification.md). Raw live evidence is generated into `evidence/runtime-*.json` (ignored so local identities/history do not accidentally publish); representative sanitized evidence can be included when publishing. CI performs Maven verification, both image builds and the live Docker acceptance script on an Ubuntu runner. The [first GitHub CI run passed](https://github.com/alphaCoderVishal/launchpad/actions/runs/38583306582) on 14 October 2026; its tested source commit is recorded in the verification report.
 
 ## API example
 

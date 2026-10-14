@@ -15,6 +15,10 @@ Verified on 14 October 2026 (IST), Windows 11, Temurin Java 25.0.2, Maven 3.9.6,
 
 ## Live acceptance assertions
 
+### Remote GitHub verification
+
+The [GitHub Actions run 38583306582](https://github.com/alphaCoderVishal/launchpad/actions/runs/38583306582) completed successfully on 14 October 2026 for commit `cd733049daac98d0fc432b06cdbfb47cc8015abf`. It passed integration tests/packaging, the real workload image build, control-plane image packaging, live Docker acceptance and evidence upload on an Ubuntu runner. The run metadata is retained in `evidence/github-ci.json`. Subsequent documentation-only publication updates do not change the tested application source. Abrupt-restart recovery and Terraform lifecycle checks remain locally verified; they are not part of this remote workflow.
+
 1. Control-plane readiness and unauthenticated 401.
 2. Cross-team service reads return 404.
 3. Unsupported release is rejected with 400.

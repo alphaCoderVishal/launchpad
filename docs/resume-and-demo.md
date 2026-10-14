@@ -8,7 +8,7 @@ Use only after reviewing `verification.md` and reproducing the demo yourself. Su
 - Implemented health-gated promotion of real local Docker workloads, retaining the last healthy route on failed upgrades and reconciling interrupted deployments using durable state and deterministic container identities.
 - Added automated integration tests, live Docker failure/recovery scenarios, Prometheus metrics and a Terraform workload module with locally verified create, health, no-drift and destroy checks.
 
-Do not claim production traffic, business impact, zero downtime, Azure deployment, OIDC integration or GitHub CI success. The Azure module is a workload-only reference; provider validation does not establish deployed infrastructure.
+Do not claim production traffic, business impact, zero downtime, Azure deployment or OIDC integration. The Azure module is a workload-only reference; provider validation does not establish deployed infrastructure. GitHub CI succeeded for the source commit linked in `verification.md`; distinguish its live acceptance checks from the locally verified abrupt-restart and Terraform scenarios.
 
 ## Five-minute demo
 
