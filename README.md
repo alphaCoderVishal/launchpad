@@ -6,7 +6,9 @@ Java 21 / Spring Boot 3.5 / Spring Security / JDBC / Flyway / H2 / Docker / Prom
 
 Launchpad addresses a concrete platform problem: developers need a repeatable path to deploy a service, while the platform must retain the last healthy release when a candidate fails. This local lab provisions real constrained Docker containers, calls their real HTTP health endpoints, and atomically changes the active route only after three consecutive successes. A failed upgrade is recorded as `ROLLED_BACK`; the prior container continues serving. No LLM, API subscription or cloud account is required.
 
-![Local deployment dashboard](evidence/dashboard.png)
+![Healthy local deployment](evidence/screenshots/01-healthy-deployment.png)
+
+**For hiring managers:** [Screenshot walkthrough](docs/screenshots.md) · [Architecture and tradeoffs](docs/architecture.md) · [Verification evidence](docs/verification.md) · [Five-minute demo](docs/resume-and-demo.md)
 
 ## Quick start: Windows
 

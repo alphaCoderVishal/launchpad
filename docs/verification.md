@@ -48,4 +48,4 @@ terraform fmt -check -recursive infra
 
 Stop a running native jar before repackaging it on Windows; otherwise Maven cannot rename the locked jar. Acceptance/recovery use ports 8091/8090 and unique namespaces/databases. The dashboard defaults to 8088. See `infra/README.md` for Terraform commands.
 
-Runtime JSON files and host logs are ignored/excluded from the source archive. The compact `evidence/summary.json` and integration report provide portable evidence. Resume bullets are based on observed local functionality. No GitHub push, hosted publication, GitHub Actions execution, Azure deployment, paid cloud resource, job application or recruiter message was performed.
+Runtime JSON files and host logs are ignored/excluded from the source archive. The compact `evidence/summary.json` and integration report provide portable evidence. Resume bullets are based on observed local functionality. This record describes checks completed before GitHub publication; remote workflow results are separate from these local results. No Azure deployment, paid cloud resource, job application or recruiter message was performed.
