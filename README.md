@@ -12,6 +12,8 @@ Launchpad addresses a concrete platform problem: developers need a repeatable pa
 
 **For hiring managers:** [Screenshot walkthrough](docs/screenshots.md) · [Architecture and tradeoffs](docs/architecture.md) · [Verification evidence](docs/verification.md) · [Five-minute demo](docs/resume-and-demo.md)
 
+**Learn the project:** [Illustrated project and interview handbook](docs/handbook/Launchpad_Project_and_Interview_Handbook.pdf) covers the system design, code flow, failure analysis, security, production evolution and 40 interview questions across 32 pages.
+
 ## Quick start: Windows
 
 Prerequisites: JDK 21 or 25, Maven 3.9+, Python 3.12+, Docker Desktop running Linux containers. The first build needs internet for Maven dependencies and the official workload base image. Subsequent deployment uses `--pull=never`.

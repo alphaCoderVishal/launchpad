@@ -4,7 +4,7 @@ import zipfile
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
-excluded = {'target', 'data', '.tools', '.terraform', '__pycache__', '.git'}
+excluded = {'target', 'data', '.tools', '.terraform', '__pycache__', '.git', 'tmp'}
 archive = root.parent / 'launchpad-source.zip'
 files = []
 for path in root.rglob('*'):
